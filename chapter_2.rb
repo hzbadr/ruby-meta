@@ -12,7 +12,22 @@ class MyClass
 end
 
 # method_missing  &  respond_to?
+# Gohst Methods. (slower)
 
 # OpenStruct
 
-# Dynamic Procies
+# Dynamic Proxies
+
+# Blank Slate
+# a class that has fewer methods than Object class itself.
+
+# Module#undef_method
+# Module#remove_method
+
+class Computer
+  #undef methods except those starting with __, method missing and respond_to? 
+  instance_methods.each do |m|
+    undef_method m unless m.to_s =~ /^__|method_missing|respond_to?/
+  end
+
+end
