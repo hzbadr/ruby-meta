@@ -50,7 +50,6 @@ end
 
 # solution
 
-
 my_var = "Success"
 MyClass = Class.new do
   puts "#{my_var} in the class definition!"
@@ -105,6 +104,14 @@ counter # => 4
 # (1) Kernel#proc and (2) Kernel#lambda to cenvert a block to a Proc
 # (3) Proc.new {}
 # (4) the & operator.
+# (5) Method#to_proc
 
+# convert block to method using define_method.
 
+# Proc vs Lambda
+# 1) return
+# Proc returns from the scope it was defined, while lambda return as normal method
+# 2) arguments
+# Lambda is less tolerant than proc
 
+#  Stubby lambda   ->(x) { x+1 }
