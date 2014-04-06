@@ -98,3 +98,13 @@ counter # => 4
 # 1) proc
 # 2) lambda
 # 3) method
+
+# blocks are not objects. What if I want to store it and pass it later to another object?
+# a Proc is a block that has been turned into an object.
+
+# (1) Kernel#proc and (2) Kernel#lambda to cenvert a block to a Proc
+# (3) Proc.new {}
+# (4) the & operator.
+
+
+
