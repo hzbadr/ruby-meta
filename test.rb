@@ -1,7 +1,7 @@
 #public
-def greet
-  'hello'
-end
+  def greet
+    'hello'
+  end
 
 class A; end
 
