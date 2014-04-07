@@ -62,3 +62,4 @@ end
 
 
 # Eigenclasses(137)
+#The superclass of the eigenclass is the eigenclass of the superclass
