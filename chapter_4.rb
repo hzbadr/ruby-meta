@@ -63,3 +63,53 @@ end
 
 # Eigenclasses(137)
 #The superclass of the eigenclass is the eigenclass of the superclass
+
+# Module include & extend
+module MyModule
+  def my_method; 'hello'; end
+end
+
+class MyClass
+  class << self
+    include MyModule
+  end
+end
+
+MyClass.my_method
+
+# obj.extend MyModule
+class MyClass
+  extend MyModule
+end
+
+# Alias
+class MyClass
+  def my_method; 'my_method()'; end
+  alias :m :my_method
+end
+
+obj = MyClass.new
+obj.my_method
+obj.m
+
+# Around Aliases  (make an alias then redefine the method)
+class String
+  alias :real_length :length
+
+  def length
+    real_length > 5 ? 'long' : 'short'
+  end
+end
+
+"War and Peace".length       # => "long"
+"War and Peace".real_length  # => 13
+
+class Fixnum
+  alias :old_plus :+
+
+  def +(value)
+    old_plus(value).old_plus(1)
+  end
+end
+
+1 + 1 # => 3
